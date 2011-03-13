@@ -18,7 +18,7 @@
 		}
 
 		function checkIfEmpty(control) {
-			if (control.val() == "") {
+			if (control.val() === "") {
 				control.val(text);
 			}
 		}
