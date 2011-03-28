@@ -10,27 +10,35 @@
  * @author Paul Serby <paul.serby@clock.co.uk>
  * @version 1.0
  */
-(function($) {
-	$.fn.placeholder = function(text) {
+(function ($) {
+	$.fn.placeholder = function (text) {
 
 		function onBlur(event) {
-			checkIfEmpty(jQuery(this));
+			checkIfEmpty($(this));
 		}
 
 		function checkIfEmpty(control) {
 			if (control.val() === "") {
 				control.val(text);
+				$(this).removeClass("placeholder");
 			}
 		}
 
 		function onFocus(event) {
-			if (jQuery(this).val() == text) {
-				jQuery(this).val("");
+			$(this).removeClass("placeholder");
+			if ($(this).val() == text) {
+				$(this).val("");
 			}
 		}
 
-		return this.each(function() {
-			checkIfEmpty(jQuery(this).blur(onBlur).focus(onFocus));
+		return this.each(function () {
+			
+			if (!("placeholder" in document.createElement('input'))) {
+				checkIfEmpty($(this).blur(onBlur).focus(onFocus).addClass("placeholder"));
+			} else {
+				$(this).attr("placeholder", text);
+			}
+
 		});
 	};
 })(jQuery);
