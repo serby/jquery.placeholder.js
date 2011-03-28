@@ -20,13 +20,13 @@
 		function checkIfEmpty(control) {
 			if (control.val() === "") {
 				control.val(text);
-				$(this).removeClass("placeholder");
+				control.addClass("placeholder");
 			}
 		}
 
 		function onFocus(event) {
 			$(this).removeClass("placeholder");
-			if ($(this).val() == text) {
+			if ($(this).val() === text) {
 				$(this).val("");
 			}
 		}
