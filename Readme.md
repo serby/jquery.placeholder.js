@@ -8,7 +8,7 @@ This simulated the placeholder attribute in [html5](http://dev.w3.org/html5/spec
 
     <input type="email" id="email" name="email" />
 
-    $('#email').placeholder('Please enter you email address');
+    $('#email').placeholder('Please enter your email address');
 
 ## Credits
 [Paul Serby](https://github.com/PabloSerbo/), [Ben Gourley](http://github.com/bengourley/)
