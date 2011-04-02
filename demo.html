@@ -1,43 +1,56 @@
 <!DOCTYPE HTML>
-
 <html>
-
-<head>
-	<title>jQuery Placeholder Test Page</title>
-	<style>
-		body {
-			width: 400px;
-			margin: 50px auto;
-		}
-
-		.placeholder {
-			font-style: italic;
-		}
+	<head>
+		<title>jQuery Placeholder Test Page</title>
+		<style>
 		
-		::-webkit-input-placeholder {
-			font-style: italic;
-		}
-		
-		:-moz-placeholder {
-			font-style: italic;
-		}
+			body {
+				width: 500px;
+				margin: 50px auto;
+			}
 
-	</style>
-</head>
+			.placeholder {
+				font-style: italic;
+			}
+			
+			label {
+				display: block;
+				margin-bottom: 1em;
+			}
 
-<body>
-	<h1>jQuery Placeholder Test</h1>
+			::-webkit-input-placeholder {
+				font-style: italic;
+			}
+			
+			:-moz-placeholder {
+				font-style: italic;
+			}
 
-	<label>
-		<strong>Name:</strong>
-		<input type="text"/>
-	</label>
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script>
-	<script src="jquery.placeholder.js"></script>
-	<script>
-		$("input").placeholder("jim");
-	</script>
-</body>
+		</style>
+	</head>
+	<body>
+		<h1>jQuery Placeholder Test</h1>
 
+		<label>
+			<strong>Basic Usage</strong>
+			<input name="Basic"  type="text" />
+		</label>
+
+		<label>
+			<strong>Input placeholder overridden by plugin</strong>
+			<input name="WithPlaceholder" type="text" placeholder="Default placeholder" />
+		</label>
+
+		<label>
+			<strong>This is not touched by the plugin so you can compare with the browsers default placeholder functionality</strong>
+			<input type="text" placeholder="Placeholder Text" />
+		</label>
+
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script>
+		<script src="jquery.placeholder.js"></script>
+		<script>
+			$('input[name=Basic]').placeholder('Email Address');
+			$('input[name=WithPlaceholder]').placeholder('Added by plugin');
+		</script>
+	</body>
 </html>
-

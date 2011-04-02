@@ -1,6 +1,6 @@
 # jQuery-Placeholder-Plugin
 
-jQuery-Placeholder-Plugin allows you to specify text in a input[type=text] which is removed when the control gets focus.
+Allows text inputs to display a placeholder message until they get focus, at which point the input is set to empty.
 
 This simulated the placeholder attribute in [html5](http://dev.w3.org/html5/spec/Overview.html#the-placeholder-attribute).
 
