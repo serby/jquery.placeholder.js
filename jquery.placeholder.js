@@ -8,7 +8,6 @@
  * @copyright Clock Limited 2010
  * @license http://opensource.org/licenses/bsd-license.php New BSD License
  * @author Paul Serby <paul.serby@clock.co.uk>
- * @version 1.0
  */
 (function ($) {
 	$.fn.placeholder = function (text) {
@@ -18,25 +17,25 @@
 		}
 
 		function checkIfEmpty(control) {
-			if (control.val() === "") {
+			if (control.val() === '') {
 				control.val(text);
-				control.addClass("placeholder");
+				control.addClass('placeholder');
 			}
 		}
 
 		function onFocus(event) {
-			$(this).removeClass("placeholder");
+			$(this).removeClass('placeholder');
 			if ($(this).val() === text) {
-				$(this).val("");
+				$(this).val('');
 			}
 		}
 
 		return this.each(function () {
 			
-			if (!("placeholder" in document.createElement('input'))) {
-				checkIfEmpty($(this).blur(onBlur).focus(onFocus).addClass("placeholder"));
+			if (!('placeholder' in document.createElement('input'))) {
+				checkIfEmpty($(this).blur(onBlur).focus(onFocus).addClass('placeholder'));
 			} else {
-				$(this).attr("placeholder", text);
+				$(this).attr('placeholder', text);
 			}
 
 		});
