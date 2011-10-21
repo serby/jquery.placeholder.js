@@ -12,32 +12,47 @@
 (function ($) {
 	$.fn.placeholder = function (text) {
 
-		function onBlur(event) {
-			checkIfEmpty($(this));
-		}
+	return this.each(function () {
 
-		function checkIfEmpty(control) {
-			if (control.val() === '') {
-				control.val(text);
-				control.addClass('placeholder');
+			var
+				context = $(this),
+				placeholderText,
+				nativePlaceholderSupport = ('placeholder' in document.createElement('input'));
+
+			function onBlur(event) {
+				checkIfEmpty($(event.target));
 			}
-		}
 
-		function onFocus(event) {
-			$(this).removeClass('placeholder');
-			if ($(this).val() === text) {
-				$(this).val('');
+			function checkIfEmpty(control) {
+				if (control.val() === '') {
+					control.val(placeholderText);
+					control.addClass('placeholder');
+				}
 			}
-		}
 
-		return this.each(function () {
-			
-			if (!('placeholder' in document.createElement('input'))) {
-				checkIfEmpty($(this).blur(onBlur).focus(onFocus).addClass('placeholder'));
+			function onFocus(event) {
+				$(this).removeClass('placeholder');
+				if (context.val() === placeholderText) {
+					context.val('');
+				}
+			}
+
+			if (text === undefined) {
+				placeholderText = $(this).attr('placeholder');
 			} else {
-				$(this).attr('placeholder', text);
+				placeholderText = text;
 			}
 
+			if (!nativePlaceholderSupport) {
+				checkIfEmpty(context.blur(onBlur).focus(onFocus).addClass('ui-placeholder'));
+				context.parents('form').submit(function(event) {
+					if (context.val() === placeholderText) {
+						context.val('');
+					}
+				});
+			} else {
+				context.attr('placeholder', text);
+			}
 		});
 	};
 })(jQuery);
