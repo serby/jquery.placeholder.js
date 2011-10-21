@@ -1,0 +1,140 @@
+html {
+  background: #ececec;
+  background: -moz-linear-gradient(-90deg, #fff, #ececec) fixed;
+  background: -webkit-gradient(linear, left top, left bottom, from(#cccccc), to(#ececec)) fixed;
+}
+body {
+  padding: 50px 150px;
+  margin: 0;
+  font: 14px/1.4 "helvetica neue", helvetica, arial, sans-serif;
+  color: #000000;
+}
+h1,
+h2,
+h3 {
+  color: #222;
+  text-shadow: #eeeeee 1px 1px 1px;
+}
+}
+h1 a,
+h2 a,
+h3 a {
+  color: #222;
+}
+h1 a:hover,
+h2 a:hover,
+h3 a:hover {
+  text-decoration: none;
+}
+h1 {
+  margin: 10px 0 15px 0;
+  font-weight: bold;
+  font-size: 4em;
+}
+h2 {
+  margin: 0;
+  font-size: 2em;
+}
+h3 {
+  font-size: 1.5em;
+}
+a {
+  text-decoration: none;
+  color: #b90101;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+strong {
+  color: #000000;
+}
+
+ul {
+  margin: 0;
+  padding: 0 25px;
+}
+
+ul li {
+  list-style: square;
+}
+
+input {
+  border: 1px solid #999999;
+  padding: 5px 5px 5px 5px;
+  width: 200px;
+  text-align: center;
+}
+
+textarea {
+  width: 500px;
+  height: 100px;
+}
+
+.tagline {
+  margin: 0;
+  padding: 0;
+}
+
+.example {
+  margin-bottom: 30px;
+}
+
+.case {
+  background: #ffffff;
+  padding: 20px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  text-align: center;
+}
+
+#container {
+  text-align: center;
+}
+
+#container #content {
+  margin: 0 auto;
+  padding-top: 20px;
+  width: 600px;
+  text-align: left;
+}
+
+pre {
+  padding: 20px;
+  background: #2b2b2b;
+  color: #b7b7b7;
+  font: 12px/1.4 monaco, courier;
+  overflow-x: auto;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  -moz-box-shadow: rgba(34,34,34,0.1) -1px -1px;
+  -webkit-box-shadow: rgba(34,34,34,0.1) -1px -1px;
+  box-shadow: rgba(34,34,34,0.1) -1px -1px;
+}
+
+#ribbon {
+  position: absolute;
+  top: 2.5em;
+  left: -3.75em;
+  -webkit-transform: rotate(-45deg);
+  -moz-transform: rotate(-45deg);
+  background-color: #0bc23c;
+  padding: 1px 0;
+  overflow: hidden;
+  -moz-box-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+  -webkit-box-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+  box-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+}
+
+#ribbon a {
+  color: #fff;
+  border: 1px solid #286b25;
+  display: block;
+  margin: 0.05em 0;
+  padding: 0.5em 3.5em;
+  text-align: center;
+  text-decoration: none;
+}
