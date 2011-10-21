@@ -1,77 +1,86 @@
-<!DOCTYPE html>
+<!DOCTYPE HTML>
 <html>
-<head>
-  <meta charset='utf-8'>
+	<head>
+		<title>jQuery Placeholder Plugin </title>
+		<link rel="stylesheet" href="demo.css">
+	</head>
+	<body>
 
-  <title>PabloSerbo/jQuery-Placeholder-Plugin @ GitHub</title>
+		<div id="container">
+			<div id="ribbon">
+				<a href="https://github.com/PabloSerbo/jquery-placeholder.js">Fork me on GitHub</a>
+			</div>
 
-  <style type="text/css">
-    body {
-      margin-top: 1.0em;
-      background-color: #969696;
-      font-family: Helvetica, Arial, FreeSans, san-serif;
-      color: #000000;
-    }
-    #container {
-      margin: 0 auto;
-      width: 700px;
-    }
-    h1 { font-size: 3.8em; color: #696969; margin-bottom: 3px; }
-    h1 .small { font-size: 0.4em; }
-    h1 a { text-decoration: none }
-    h2 { font-size: 1.5em; color: #696969; }
-    h3 { text-align: center; color: #696969; }
-    a { color: #696969; }
-    .description { font-size: 1.2em; margin-bottom: 30px; margin-top: 30px; font-style: italic;}
-    .download { float: right; }
-    pre { background: #000; color: #fff; padding: 15px;}
-    hr { border: 0; width: 80%; border-bottom: 1px solid #aaa}
-    .footer { text-align:center; padding-top:30px; font-style: italic; }
-  </style>
-</head>
+			<h1>jquery.placeholder.js</h1>
+			<p class="tagline">HTML5 Placeholder Failover Plugin</p>
 
-<body>
-  <a href="http://github.com/PabloSerbo/jQuery-Placeholder-Plugin"><img style="position: absolute; top: 0; right: 0; border: 0;" src="http://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub" /></a>
+			<div id="content">
 
-  <div id="container">
+				<div class="example">
+					<h2>Native Placeholder Failover</h2>
+					<p>This will provide failover for the placeholder attribute on text inputs and textareas for Internet Explorer 7 and 8</p>
+					<pre>
+&lt;input type="text" name="emailAddress" placeholder="Enter your email address" /&gt;
 
-    <div class="download">
-      <a href="http://github.com/PabloSerbo/jQuery-Placeholder-Plugin/zipball/master">
-        <img border="0" width="90" src="http://github.com/images/modules/download/zip.png"></a>
-      <a href="http://github.com/PabloSerbo/jQuery-Placeholder-Plugin/tarball/master">
-        <img border="0" width="90" src="http://github.com/images/modules/download/tar.png"></a>
-    </div>
+&lt;textarea name="about" placeholder="Tell us about yourself" /&gt;
 
-    <h1><a href="http://github.com/PabloSerbo/jQuery-Placeholder-Plugin">jQuery-Placeholder-Plugin</a>
-      <span class="small">by <a href="http://github.com/PabloSerbo">PabloSerbo</a></span></h1>
+$('input[type=text], textarea').placeholder();
+					</pre>
 
-    <div class="description">
-      Replicates the HTML placeholder functionality
-    </div>
+					<h3>Example</h3>
+					<div class="case">
+						<input type="text" name="emailAddress" placeholder="Enter your email address" />
+						<textarea name="about" placeholder="Tell us about yourself"></textarea>
+					</div>
+				</div>
 
-    <h2>Authors</h2>
-<p>Ben Gourley (ben.gourley@clock.co.uk)<br/>Paul Serby (paul.serby@clock.co.uk)<br/>      </p>
-<h2>Contact</h2>
-<p>Paul Serby (paul.serby@clock.co.uk)<br/>      </p>
+				<div class="example">
+					<h2>Explict Usage</h2>
+					This method can be used to add failover in Internet Explorer 6
+					<pre>
+&lt;input name="Explict" type="text" /&gt;
+
+$('input[name=Explict]').placeholder('Enter your email address');
+					</pre>
+
+					<h3>Example</h3>
+					<div class="case">
+						<input name="Explict" type="text" />
+					</div>
+				</div>
 
 
-    <h2>Download</h2>
-    <p>
-      You can download this project in either
-      <a href="http://github.com/PabloSerbo/jQuery-Placeholder-Plugin/zipball/master">zip</a> or
-      <a href="http://github.com/PabloSerbo/jQuery-Placeholder-Plugin/tarball/master">tar</a> formats.
-    </p>
-    <p>You can also clone the project with <a href="http://git-scm.com">Git</a>
-      by running:
-      <pre>$ git clone git://github.com/PabloSerbo/jQuery-Placeholder-Plugin</pre>
-    </p>
+				<div class="example">
+					<h2>Input placeholder overridden by plugin</h2>
+					<p>
+						Excplictly defined text will override the placeholder attribute. However it still uses the native
+						placeholder functionality if avaiable</p>
+					<pre>
+&lt;input name="WithPlaceholder" type="text" /&gt;
 
-    <div class="footer">
-      get the source code on GitHub : <a href="http://github.com/PabloSerbo/jQuery-Placeholder-Plugin">PabloSerbo/jQuery-Placeholder-Plugin</a>
-    </div>
+$('input[name=WithPlaceholder]').placeholder('Added by plugin');
+					</pre>
 
-  </div>
+					<h3>Example</h3>
+					<div class="case">
+						<input name="WithPlaceholder" type="text" placeholder="Hello" />
+					</div>
+				</div>
 
-  
-</body>
+				<div class="info">
+					<h2>On Submit</h2>
+					<p>In browsers that don't have native placeholder support, the form submit event will be added to and the value of the inputs and textareas will be cleared if they still match the placeholder text.</p>
+				</div>
+			</div>
+		</div>
+
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>
+		<script src="jquery.placeholder.js"></script>
+		<script>
+			$('input[type=text], textarea').placeholder();
+			$('input[name=Explict]').placeholder('Enter your email address');
+			$('input[name=WithPlaceholder]').placeholder('Added by plugin');
+			$('input[name=UsePlaceholder]').placeholder();
+		</script>
+	</body>
 </html>
