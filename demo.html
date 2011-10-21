@@ -1,0 +1,106 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>jQuery Placeholder Plugin </title>
+		<link rel="stylesheet" href="demo.css">
+		<style>
+
+
+			.placeholder {
+				font-style: italic;
+			}
+
+			label {
+				display: block;
+				margin-bottom: 1em;
+			}
+
+			::-webkit-input-placeholder {
+
+			}
+
+			:-moz-placeholder {
+
+			}
+		</style>
+	</head>
+	<body>
+
+		<div id="container">
+			<div id="ribbon">
+				<a href="https://github.com/PabloSerbo/jquery-placeholder.js">Fork me on GitHub</a>
+			</div>
+
+			<h1>jquery.placeholder.js</h1>
+			<p class="tagline">HTML5 Placeholder Failover Plugin</p>
+
+			<div id="content">
+
+				<div class="example">
+					<h2>Native Placeholder Failover</h2>
+					<p>This will provide failover for the placeholder attribute on text inputs and textareas for Internet Explorer 7 and 8</p>
+					<pre>
+&lt;input type="text" name="emailAddress" placeholder="Enter your email address" /&gt;
+
+&lt;textarea name="about" placeholder="Tell us about yourself" /&gt;
+
+$('input[type=text], textarea').placeholder();
+					</pre>
+
+					<h3>Example</h3>
+					<div class="case">
+						<input type="text" name="emailAddress" placeholder="Enter your email address" />
+						<textarea name="about" placeholder="Tell us about yourself"></textarea>
+					</div>
+				</div>
+
+				<div class="example">
+					<h2>Explict Usage</h2>
+					This method can be used to add failover in Internet Explorer 6
+					<pre>
+&lt;input name="Explict" type="text" /&gt;
+
+$('input[name=Explict]').placeholder('Enter your email address');
+					</pre>
+
+					<h3>Example</h3>
+					<div class="case">
+						<input name="Explict" type="text" />
+					</div>
+				</div>
+
+
+				<div class="example">
+					<h2>Input placeholder overridden by plugin</h2>
+					<p>
+						Excplictly defined text will override the placeholder attribute. However it still uses the native
+						placeholder functionality if avaiable</p>
+					<pre>
+&lt;input name="WithPlaceholder" type="text" /&gt;
+
+$('input[name=WithPlaceholder]').placeholder('Added by plugin');
+					</pre>
+
+					<h3>Example</h3>
+					<div class="case">
+						<input name="WithPlaceholder" type="text" placeholder="Hello" />
+					</div>
+				</div>
+
+				<div class="info">
+					<h2>On Submit</h2>
+					<p>In browsers that don't have native placeholder support, the form submit event will be added to and the value of the inputs and textareas will be cleared if they still match the placeholder text.</p>
+				</div>
+			</div>
+		</div>
+
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>
+		<script src="jquery.placeholder.js"></script>
+		<script>
+			$('input[type=text], textarea').placeholder();
+			$('input[name=Explict]').placeholder('Enter your email address');
+			$('input[name=WithPlaceholder]').placeholder('Added by plugin');
+			$('input[name=UsePlaceholder]').placeholder();
+		</script>
+	</body>
+</html>
