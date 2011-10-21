@@ -41,4 +41,4 @@ In browsers that don't have native placeholder support, the form submit event wi
 [Paul Serby](https://github.com/PabloSerbo/), [Ben Gourley](http://github.com/bengourley/)
 
 ## Licence
-jQuery-Placeholder-Plugin is licenced under the [New BSD License](http://opensource.org/licenses/bsd-license.php)
+jquery.placeholder.js is licenced under the [New BSD License](http://opensource.org/licenses/bsd-license.php)
