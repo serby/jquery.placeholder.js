@@ -26,12 +26,12 @@
 			function checkIfEmpty(control) {
 				if (control.val() === '') {
 					control.val(placeholderText);
-					control.addClass('placeholder');
+					control.addClass('ui-placeholder');
 				}
 			}
 
 			function onFocus(event) {
-				$(this).removeClass('placeholder');
+				$(this).removeClass('ui-placeholder');
 				if (context.val() === placeholderText) {
 					context.val('');
 				}
