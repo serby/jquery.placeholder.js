@@ -28,9 +28,10 @@ $('input[type=text], textarea').placeholder();
 					</pre>
 
 					<h3>Example</h3>
-					<div class="case">
+					<div id="native-example" class="case">
 						<input type="text" name="emailAddress" placeholder="Enter your email address" />
-						<textarea name="about" placeholder="Tell us about yourself"></textarea>
+						<input type="password" name="password" placeholder="Your password" />
+						<textarea name="about" Placeholder="Tell us about yourself"></textarea>
 					</div>
 				</div>
 
@@ -56,14 +57,14 @@ $('input[name=Explict]').placeholder('Enter your email address');
 						Excplictly defined text will override the placeholder attribute. However it still uses the native
 						placeholder functionality if avaiable</p>
 					<pre>
-&lt;input name="WithPlaceholder" type="text" /&gt;
+&lt;input name="WithPlaceholder" type="text" placeholder="Native Placeholder" /&gt;
 
 $('input[name=WithPlaceholder]').placeholder('Added by plugin');
 					</pre>
 
 					<h3>Example</h3>
 					<div class="case">
-						<input name="WithPlaceholder" type="text" placeholder="Hello" />
+						<input name="WithPlaceholder" type="text" placeholder="Native Placeholder" />
 					</div>
 				</div>
 
@@ -75,12 +76,11 @@ $('input[name=WithPlaceholder]').placeholder('Added by plugin');
 		</div>
 
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>
-		<script src="jquery.placeholder.js"></script>
+		<script src="../jquery.placeholder.js"></script>
 		<script>
-			$('input[type=text], textarea').placeholder();
+			$('input[type=text], input[type=password], textarea', $('#native-example')).placeholder();
 			$('input[name=Explict]').placeholder('Enter your email address');
 			$('input[name=WithPlaceholder]').placeholder('Added by plugin');
-			$('input[name=UsePlaceholder]').placeholder();
 		</script>
 	</body>
 </html>
