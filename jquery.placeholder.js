@@ -23,15 +23,22 @@
 				checkIfEmpty($(event.target));
 			}
 
-			function checkIfEmpty(control) {
-				if (control.val() === '') {
-					control.val(placeholderText);
-					control.addClass('ui-placeholder');
+			function checkIfEmpty() {
+				if (context.val() === '') {
+					if (context.attr('type') === 'password') {
+						try {
+							context.attr('type', 'text');
+						} catch(e) {
+							return false;
+						}
+					}
+					context.val(placeholderText);
+					context.addClass('ui-placeholder');
 				}
 			}
 
 			function onFocus(event) {
-				$(this).removeClass('ui-placeholder');
+				context.removeClass('ui-placeholder');
 				if (context.val() === placeholderText) {
 					context.val('');
 				}
