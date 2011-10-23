@@ -51,7 +51,7 @@
 					}
 				});
 			} else {
-				context.attr('placeholder', text);
+				context.attr('placeholder', placeholderText);
 			}
 		});
 	};
