@@ -51,7 +51,7 @@
 			}
 
 			if (!nativePlaceholderSupport) {
-				checkIfEmpty(context.blur(onBlur).focus(onFocus).addClass('ui-placeholder'));
+				checkIfEmpty(context.blur(onBlur).focus(onFocus));
 				context.parents('form').submit(function(event) {
 					if (context.val() === placeholderText) {
 						context.val('');
